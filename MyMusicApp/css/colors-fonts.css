@@ -1,0 +1,22 @@
+:root
+{
+    --color1: rgb(35, 34, 33);
+    --color2: rgb(206, 206, 206);
+    --color3: rgb(255, 0, 0);
+    --color4: rgb(18, 18, 18);
+    --color5: rgb(0, 0, 0);
+
+    --myFont: 'myFont';
+    --titleFont: 'titleFont';
+
+    
+}
+
+@font-face {
+    font-family: 'myFont';
+    src: url(../fonts/SairaCondensed-Medium.ttf);
+  }
+  @font-face {
+    font-family: 'titleFont';
+    src: url(../fonts/Jersey25-Regular.ttf);
+  }

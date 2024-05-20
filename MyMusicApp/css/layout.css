@@ -1,0 +1,97 @@
+:root {
+    color: var(--color3);
+}
+
+figcaption, a { 
+  
+    /* Change to custom font */
+    color: var(--color2);
+    font-family: var(--myFont);
+  }
+
+  nav h1 { 
+  
+    /* Change to custom font */
+    color: var(--color3);
+    font-family: var(--titleFont);
+  }
+
+body{
+    /* padding-top: 0px; */
+    overflow-y: hidden;
+}
+
+.grid-page{
+    display: grid;
+    /* grid-gap: 10px; */
+    grid-template-columns: 100px 1fr;
+    grid-template-rows: 65px 1fr 40px;
+    background-color: var(--color5);
+    grid-template-areas:
+      'nav nav nav nav nav nav'
+      'aside main main main main main'
+      'footer footer footer footer footer footer';
+    height: 100vh;
+}
+
+a:hover
+{
+    font-size: large;
+    border: solid green;
+}
+
+nav {
+    /* display: grid; */
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    grid-area: nav;
+    background-color: var(--color4);
+    font-size: large;
+}
+
+aside {
+    display: flex;
+    flex-direction: column;
+    grid-area: aside;
+    background-color:var(--color4);
+}
+
+footer {
+    /* display: grid; */
+    text-align: right;
+    grid-area: footer;
+    background-color:var(--color4);
+}
+
+.LastItem {
+	margin-top: auto;		/* change to margin-top; to move to the last item to the bottom */
+}
+
+@media screen and (max-width: 600px){
+
+    .grid-page{
+        display: grid;
+        grid-template-rows: 65px 65px 1fr 40px;
+        grid-template-areas:
+          'nav nav nav nav nav nav'
+          'aside aside aside aside aside aside'
+          'main main main main main main'
+          'footer footer footer footer footer footer';
+        height: 100vh;
+    }
+
+    aside {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .LastItem {
+		margin:unset;
+	}
+    
+    .ListItem {
+		margin:unset;
+		margin-right: 1rem;		/* changed to move the last item to the far right */
+		width: 45px;
+	}
+}
