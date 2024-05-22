@@ -5,8 +5,7 @@ const url = "https://appmusicwebapinet8.azurewebsites.net/api";
 const _service = new musicService(url);
 
 let _currentPage = 0;
-// let _maxNrpages = 1;
-let _maxNrpages = 20;
+let _maxNrPages = 1;
 
 const albumlist = document.querySelector("#albums");
 const btnPrev = document.querySelector("#btnPrev");
@@ -29,7 +28,7 @@ async function clickPrev (e){
 }
 
 async function clickNext (e){
-    if (_currentPage < _maxNrpages-1) {
+    if (_currentPage < _maxNrPages-1) {
         _currentPage++;
         await renderAlbums(_currentPage, searchInput.value);
     }
@@ -54,10 +53,7 @@ async function renderAlbums(currentPage, filter = null) {
         albumlist.appendChild(li);
     });
 
-    // _maxNrPages = Math.ceil(data.totalCount / data.pageSize);
-    // console.log('Total Count:', data.totalCount);
-    // console.log('Page Size:', data.pageSize);
-    // console.log(_maxNrpages);
+    _maxNrPages = data.pageCount;
 }
 
 //Page init

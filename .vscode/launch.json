@@ -38,7 +38,7 @@
             "type": "chrome",
             "request": "launch",
             "name": "AppFinal",
-            "url": "http://localhost:5502/${relativeFileDirname}/../books.html",
+            "url": "http://localhost:5500/MyMusicApp/musicgroups.html",
             "webRoot": "${workspaceFolder}"
         },
         {
