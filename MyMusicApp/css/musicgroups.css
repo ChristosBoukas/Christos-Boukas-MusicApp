@@ -7,12 +7,18 @@ main {
     flex-flow: row wrap;
 }
 
+.modal {
+  background-color: beige;
+  border: 2px solid burlywood;
+  border-radius: 5px;
+  }
+
 .tableFluid {
   padding: 30px;
 }
 
 .theadFluid .trFluid {
-  background-color: #FFEEDB;
+  background-color: #ffffff;
   font-weight: bold;
   padding-top: 10px;
   padding-bottom: 10px;
@@ -23,7 +29,7 @@ main {
 }
 
 .trFluid:nth-child(even) {
-  background-color: lightgray;
+  background-color: rgb(54, 54, 54);
 }
 
 /* Main container: initialize the flex, direction is row */

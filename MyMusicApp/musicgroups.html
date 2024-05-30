@@ -26,15 +26,66 @@
                 <button id="btnNext">Next</button>
             </div>
 
-            <ul id="albums"></ul>
-            
+            <div class="tableFluid" >
+
+                <div class="theadFluid">
+                  <div class="trFluid">
+                    <div class="trFluid_Grouping2">    
+                      <div class="trFluid_Grouping1">
+                        <div class="tdFluent">Book title</div>
+                      </div>
+                      <div class="trFluid_Grouping1"> 
+                        <div class="tdFluent"><button>Button</button></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="tbodyFluid" id="albums">
+    
+                    <!-- divRow -->
+                    <div class="trFluid">
+        
+                        <!-- divGroup2 -->
+                        <div class="trFluid_Grouping2"> 
+        
+                            <!-- divGroup1_1 -->
+                            <div class="trFluid_Grouping1">
+                                <!-- tdFluent1 -->
+                                <div class="tdFluent">Album Title</div>
+                            </div>
+                            
+                            <!-- divGroup1_2 -->
+                            <div class="trFluid_Grouping1">
+                                <!-- tdFluent2 -->
+                                <div class="tdFluent"><button>View Details</button></div>
+                            </div>
+        
+                        </div>
+        
+                    </div>
+    
+                </div>     
+
+            </div>
         </main>
 
-        
         <footer>
             copyright footer
         </footer>
     </div>
+
+    <!-- modal -->
+    <dialog id="favDialog">
+        <form method="dialog">
+          <p>Band Name:</p>
+          <p>Genre:</p>
+          <p>Established:</p>
+          <p>Bandmember Amount:</p>
+          <p>Album Amount:</p>
+          <button>Close dialog</button>
+        </form>
+      </dialog>
 
     <script type="module" src="./Script/musicgroups.js"></script>
 

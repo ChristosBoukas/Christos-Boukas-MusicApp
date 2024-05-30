@@ -12,6 +12,7 @@ const btnPrev = document.querySelector("#btnPrev");
 const btnNext = document.querySelector("#btnNext");
 const btnSearch = document.querySelector("#btnSearch");
 const searchInput = document.querySelector("[data-search]");
+const favDialog = document.getElementById('favDialog');
 
 //Add event listeners
 btnPrev.addEventListener("click", clickPrev);
@@ -19,6 +20,11 @@ btnNext.addEventListener("click", clickNext);
 btnSearch.addEventListener("click", clickSearch);
 
 //Declare event handlers
+async function clickGroup(albumId) {
+    await fetchMusicGroup(albumId);
+    favDialog.showModal();
+  }
+
 async function clickPrev (e){
 
     if (_currentPage > 0 ) {
@@ -48,12 +54,59 @@ async function renderAlbums(currentPage, filter = null) {
     }
 
     data.pageItems.forEach(item => {
-        const li = document.createElement("li");
-        li.innerText = item.name;
-        albumlist.appendChild(li);
+        addRow(item.name, item.musicGroupId)
     });
 
     _maxNrPages = data.pageCount;
+}
+
+async function fetchMusicGroup(id) {
+    let musicGroupData = await _service.readMusicGroupAsync(id, true);
+    console.log(musicGroupData);
+}
+
+function addRow(albumTitle, albumId) {
+
+    // trFluidRow
+    let divRow = document.createElement(`div`);
+    divRow.classList.add("trFluid");
+
+    // trFluid_Grouping2
+    let divGroup2 = document.createElement(`div`);
+    divGroup2.classList.add("trFluid_Grouping2");
+    divRow.appendChild(divGroup2);
+
+    // divGroup1_1 
+    let divGroup1_1 = document.createElement(`div`);
+    divGroup1_1.classList.add("trFluid_Grouping1");
+
+    // divGroup1_2
+    let divGroup1_2 = document.createElement(`div`);
+    divGroup1_2.classList.add("trFluid_Grouping1");
+
+    divGroup2.appendChild(divGroup1_1);
+    divGroup2.appendChild(divGroup1_2);
+
+    // tdFluent1
+    let divFluent1 = document.createElement(`div`);
+    divFluent1.classList.add("tdFluent");
+    divFluent1.innerHTML = albumTitle;    
+
+    // tdFluent2
+    let divFluent2 = document.createElement(`div`);
+    divFluent2.classList.add("tdFluent");
+
+    // tdFluent2 Button
+    let divFluent2Button = document.createElement("button");
+    divFluent2Button.dataset.itemId = albumId;
+    divFluent2Button.addEventListener('click', () => clickGroup(albumId));
+    divFluent2Button.innerHTML = "Details";
+
+    divFluent2.appendChild(divFluent2Button);
+    divGroup1_1.appendChild(divFluent1);
+    divGroup1_2.appendChild(divFluent2);
+
+    albumlist.appendChild(divRow);
 }
 
 //Page init
