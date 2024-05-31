@@ -13,6 +13,7 @@ const btnNext = document.querySelector("#btnNext");
 const btnSearch = document.querySelector("#btnSearch");
 const searchInput = document.querySelector("[data-search]");
 const favDialog = document.getElementById('favDialog');
+const dialogForm = document.getElementById('dialogForm')
 
 //Add event listeners
 btnPrev.addEventListener("click", clickPrev);
@@ -21,7 +22,41 @@ btnSearch.addEventListener("click", clickSearch);
 
 //Declare event handlers
 async function clickGroup(albumId) {
-    await fetchMusicGroup(albumId);
+    //let musicGroupData = await fetchMusicGroup(albumId);
+    let musicGroupData = await _service.readMusicGroupAsync(albumId, false);
+
+    // Clear the dialog content
+    while (dialogForm.firstElementChild !== null) {
+        dialogForm.removeChild(dialogForm.firstElementChild);
+    }
+
+    // Populate the dialog with new content
+    const bandNameElement = document.createElement('p');
+    bandNameElement.innerHTML = `Band Name: ${musicGroupData.name}`;
+    dialogForm.appendChild(bandNameElement);
+
+    const genreElement = document.createElement('p');
+    genreElement.innerHTML = `Genre: ${musicGroupData.strGenre}`;
+    dialogForm.appendChild(genreElement);
+
+    const establishedElement = document.createElement('p');
+    establishedElement.innerHTML = `Established: ${musicGroupData.establishedYear}`;
+    dialogForm.appendChild(establishedElement);
+
+    const bandMemberAmountElement = document.createElement('p');
+    bandMemberAmountElement.innerHTML = `Bandmember Amount: ${musicGroupData.artists.length}`;
+    dialogForm.appendChild(bandMemberAmountElement);
+
+    const albumAmountElement = document.createElement('p');
+    albumAmountElement.innerHTML = `Album Amount: ${musicGroupData.albums.length}`;
+    dialogForm.appendChild(albumAmountElement);
+
+    const closeButton = document.createElement('button');
+    closeButton.innerHTML = 'Close';
+    closeButton.setAttribute('type', 'button');
+    closeButton.addEventListener('click', () => favDialog.close());
+    dialogForm.appendChild(closeButton);
+
     favDialog.showModal();
   }
 
