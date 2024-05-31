@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/colors-fonts.css">
     <link rel="stylesheet" href="./css/layout.css">
-    <link rel="stylesheet" href="./css/musicgroups.css">
+    <link rel="stylesheet" href="./css/musicgroups.css"> 
     <title>Document</title>
 </head>
 <body>
 
     <div class="grid-page">
-        <nav><h1>MUSIC GROUPS</h1></nav>
+        <nav><h1>MUSIX APP</h1></nav>
 
         <aside>
             <a href="./home.html" class="ListItem">Home</a>
@@ -19,55 +19,60 @@
         </aside>
 
         <main>
-            <div class="formInputContainer">
-                <input id="searchid" name="search" type="text" data-search placeholder="Input search text" required />
-                <button id="btnSearch">Search</button>
-                <button id="btnPrev">Prev</button>
-                <button id="btnNext">Next</button>
-            </div>
 
-            <div class="tableFluid" >
+            <div class="musicTableForm">
 
-                <div class="theadFluid">
-                  <div class="trFluid">
-                    <div class="trFluid_Grouping2">    
-                      <div class="trFluid_Grouping1">
-                        <div class="tdFluent">Book title</div>
-                      </div>
-                      <div class="trFluid_Grouping1"> 
-                        <div class="tdFluent"><button>Button</button></div>
-                      </div>
-                    </div>
-                  </div>
+                <div class="formInputContainer">
+                    <input id="searchid" name="search" type="text" data-search placeholder="Input search text" required />
+                    <button id="btnSearch">Search</button>
+                    <button id="btnPrev">Prev</button>
+                    <button id="btnNext">Next</button>
                 </div>
 
-                <div class="tbodyFluid" id="albums">
-    
-                    <!-- divRow -->
+                <div class="tableFluid" >
+
+                    <div class="theadFluid">
                     <div class="trFluid">
+                        <div class="trFluid_Grouping2">    
+                        <div class="trFluid_Grouping1">
+                            <div class="tdFluent">Album Title</div>
+                        </div>
+                        <div class="trFluid_Grouping1"> 
+                            <div class="tdFluent"></div>
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+
+                    <div class="tbodyFluid" id="albums">
         
-                        <!-- divGroup2 -->
-                        <div class="trFluid_Grouping2"> 
-        
-                            <!-- divGroup1_1 -->
-                            <div class="trFluid_Grouping1">
-                                <!-- tdFluent1 -->
-                                <div class="tdFluent">Album Title</div>
+                        <!-- divRow -->
+                        <div class="trFluid">
+            
+                            <!-- divGroup2 -->
+                            <div class="trFluid_Grouping2"> 
+            
+                                <!-- divGroup1_1 -->
+                                <div class="trFluid_Grouping1">
+                                    <!-- tdFluent1 -->
+                                    <div class="tdFluent">Album Title</div>
+                                </div>
+                                
+                                <!-- divGroup1_2 -->
+                                <div class="trFluid_Grouping1">
+                                    <!-- tdFluent2 -->
+                                    <div class="tdFluent"><button>View Details</button></div>
+                                </div>
+            
                             </div>
-                            
-                            <!-- divGroup1_2 -->
-                            <div class="trFluid_Grouping1">
-                                <!-- tdFluent2 -->
-                                <div class="tdFluent"><button>View Details</button></div>
-                            </div>
-        
+            
                         </div>
         
-                    </div>
-    
-                </div>     
+                    </div>     
 
+                </div>
             </div>
+
         </main>
 
         <footer>
@@ -76,7 +81,7 @@
     </div>
 
     <!-- modal -->
-    <dialog id="favDialog">
+    <dialog id="favDialog" class="modal">
       <form method="dialog" id="dialogForm">
           <p>Band Name: <span id="bandName"></span></p>
           <p>Genre: <span id="genre"></span></p>

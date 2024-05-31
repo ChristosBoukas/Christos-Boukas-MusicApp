@@ -3,15 +3,11 @@
 }
 
 figcaption, a { 
-  
-    /* Change to custom font */
     color: var(--color2);
     font-family: var(--myFont);
   }
 
-  nav h1 { 
-  
-    /* Change to custom font */
+nav h1 { 
     color: var(--color3);
     font-family: var(--titleFont);
   }
@@ -24,8 +20,8 @@ body{
 .grid-page{
     display: grid;
     /* grid-gap: 10px; */
-    grid-template-columns: 100px 1fr;
-    grid-template-rows: 65px 1fr 40px;
+    grid-template-columns: 170px 1fr;
+    grid-template-rows: 65px 1fr 50px;
     background-color: var(--color5);
     grid-template-areas:
       'nav nav nav nav nav nav'
@@ -36,8 +32,9 @@ body{
 
 a:hover
 {
-    font-size: large;
-    border: solid green;
+    /* font-size: large; */
+    /* border: solid green; */
+    color: red;
 }
 
 nav {
@@ -54,21 +51,35 @@ aside {
     display: flex;
     flex-direction: column;
     grid-area: aside;
-    background-color:var(--color4);
+    background-color:var(--color4);    
 }
 
 footer {
-    /* display: grid; */
-    text-align: right;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 1em;
     grid-area: footer;
     background-color:var(--color4);
 }
 
-.LastItem {
-	margin-top: auto;		/* change to margin-top; to move to the last item to the bottom */
+footer p {
+    margin: 0;  /* Remove default margin */
+    height: 30px;
 }
 
-@media screen and (max-width: 600px){
+.ListItem, .LastItem {
+    text-decoration: none;
+    margin-left: 1em;
+    font-size: x-large;
+    margin-top: 0px;
+}
+
+.ListItem {
+    margin-top: 10px;
+}
+
+@media screen and (max-width: 700px){
 
     .grid-page{
         display: grid;
@@ -83,15 +94,16 @@ footer {
 
     aside {
         flex-direction: row;
-        justify-content: space-between;
+        justify-content: center;
     }
-    .LastItem {
-		margin:unset;
-	}
     
     .ListItem {
-		margin:unset;
-		margin-right: 1rem;		/* changed to move the last item to the far right */
-		width: 45px;
-	}
+        margin-bottom: unset;
+        margin-right: 1rem;
+    }
+    
+    .LastItem {
+        margin-top: unset;
+        margin-left: auto;
+    }
 }

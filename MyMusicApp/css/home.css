@@ -1,0 +1,35 @@
+body {
+    position: relative;
+}
+
+main {
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    height: 100%;
+    
+}
+
+.homeContent {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 2px solid red;
+    padding: 20px; 
+    text-align: center;
+}
+
+.homeContent h1 {
+    font-family: var(--titleFont);
+    margin-bottom: 10px;
+}
+
+.homeContent p {
+    font-family: var(--myFont);
+}
+
+@media screen and (max-width: 600px){
+    
+
+}
