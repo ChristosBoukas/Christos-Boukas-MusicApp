@@ -28,8 +28,3 @@ main {
 .homeContent p {
     font-family: var(--myFont);
 }
-
-@media screen and (max-width: 600px){
-    
-
-}

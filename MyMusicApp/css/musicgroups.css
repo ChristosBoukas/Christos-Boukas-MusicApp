@@ -1,3 +1,7 @@
+body {
+  position: relative;
+}
+
 main {
     display: flex;
     grid-row-gap: 0px;
@@ -70,6 +74,16 @@ main {
 .tdFluent.num {
   width: var(--cell-width);
   text-align: right;
+}
+
+.musicTableForm {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 2px solid red;
+  padding: 20px; 
+  text-align: center;
 }
 
     
