@@ -4,11 +4,15 @@ body {
 
 main {
     display: flex;
-    grid-row-gap: 0px;
     overflow-y: scroll;
     grid-area: main;
     background-color:var(--color5);
-    flex-flow: row wrap;
+}
+
+.theadFluid .tdFluent{
+  color: var(--color2);
+  font-family: var(--titleFont);
+  font-size: xx-large;
 }
 
 .modal {
@@ -19,34 +23,32 @@ main {
   }
 
 .tableFluid {
+  width: 100%;
   padding: 30px;
 }
 
 .theadFluid .trFluid {
-  background-color: #ffffff;
+  background-color: #000000;
   font-weight: bold;
   padding-top: 10px;
   padding-bottom: 10px;
-}
-
-.trFluid {
-  padding: 5px;
+  background: radial-gradient(circle at center, red 0, rgb(107, 40, 40), rgb(0, 0, 0) 100%)
 }
 
 .trFluid:nth-child(even) {
   background-color: rgb(54, 54, 54);
 }
 
-/* Main container: initialize the flex, direction is row */
 .trFluid {
   display: flex;
   flex-direction: row;
   flex-grow: 0;
   flex-wrap: wrap;
   width: 100%;
+  padding: 5px;
 }
 
-/* Wrappers around cells and other wrappers: flex, row, wrap */
+
 .trFluid_Grouping2, 
 .trFluid_Grouping1
 {
@@ -54,29 +56,30 @@ main {
   flex-direction: row;
   flex-wrap: wrap;
   flex-grow: 1;
+  flex-basis: 0;
 }
 
-.trFluid_Grouping2.num, 
-.trFluid_Grouping1.num {
-  flex-grow: 0;
-}
-
-/* Text based cells: grow, truncate and show ellipsis when there is not enough space */
 .tdFluent {
+  justify-content: center;
+  align-items: center;
   flex-grow: 1; 
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
   padding-right: 20px;
   width: var(--cell-width);
+  color: var(--color3);
+  font-family: var(--myFont);
 }
 
-.tdFluent.num {
-  width: var(--cell-width);
-  text-align: right;
-}
-
-.musicTableForm {
+.musicTableForm { 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+  max-width: 800px;
+  margin: 0 auto;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -86,13 +89,56 @@ main {
   text-align: center;
 }
 
+button {
+  background-color: black; /* Black background */
+  color: red; /* Red text */
+  border: 2px solid red; /* Red border */
+  border-radius: 5px; /* Rounded corners */
+  padding: 7x 12px; /* Padding */
+  font-size: 10px; /* Font size */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s, color 0.3s; /* Smooth transition for background and text color */
+}
+
+/* Hover Effects */
+button:hover {
+  background-color: red; /* Red background on hover */
+  color: black; /* Black text on hover */
+}
+
+/* Active State */
+button:active {
+  background-color: darkred; /* Darker red background on click */
+  border-color: black; /* Black border on click */
+}
+
+
+/* Specific Button Styles */
+#btnSearch, #btnPrev, #btnNext {
+  margin: 5px; /* Margin between buttons */
+}
     
-  @media (max-width: 600px) {
+  @media (max-width: 800px) {
     .ListItem {
 		margin:unset;
-		margin-right: 1rem;		/* changed to move the last item to the far right */
+		margin-right: 1rem;
 		width: 45px;
 	}
+
+    .tableFluid {
+      flex-direction: row; /* Change flex-direction to column */
+    }
+  
+    .trFluid_Grouping2, 
+    .trFluid_Grouping1 {
+      flex-direction: column /* Ensure items within groups are still in a row */
+    }
+  }
+
+  @media (min-width: 1000px) {
+    .tdFluent { 
+      font-size: large;
+    }
   }
 
 
