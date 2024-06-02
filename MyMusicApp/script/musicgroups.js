@@ -22,7 +22,6 @@ btnSearch.addEventListener("click", clickSearch);
 
 //Declare event handlers
 async function clickGroup(albumId) {
-    //let musicGroupData = await fetchMusicGroup(albumId);
     let musicGroupData = await _service.readMusicGroupAsync(albumId, false);
 
     // Clear the dialog content
@@ -93,11 +92,6 @@ async function renderAlbums(currentPage, filter = null) {
     });
 
     _maxNrPages = data.pageCount;
-}
-
-async function fetchMusicGroup(id) {
-    let musicGroupData = await _service.readMusicGroupAsync(id, true);
-    console.log(musicGroupData);
 }
 
 function addRow(albumTitle, albumId) {

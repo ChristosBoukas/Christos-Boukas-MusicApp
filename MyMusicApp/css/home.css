@@ -7,7 +7,6 @@ main {
     justify-content: center; 
     align-items: center;
     height: 100%;
-    
 }
 
 .homeContent {
@@ -27,4 +26,20 @@ main {
 
 .homeContent p {
     font-family: var(--myFont);
+}
+
+@media screen and (max-width: 700px) {
+    .homeContent {
+        position: static;
+        top: unset;
+        left: unset;
+        transform: unset;
+    }
+
+    main {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100vw;
+    }
 }

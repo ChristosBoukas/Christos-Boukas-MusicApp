@@ -2,12 +2,12 @@
     color: var(--color3);
 }
 
-figcaption, a { 
+figcaption, a {
     color: var(--color2);
     font-family: var(--myFont);
   }
 
-nav h1 { 
+nav h1 {
     color: var(--color3);
     font-family: var(--titleFont);
   }
@@ -51,7 +51,7 @@ aside {
     display: flex;
     flex-direction: column;
     grid-area: aside;
-    background-color:var(--color4);    
+    background-color:var(--color4);
 }
 
 footer {
@@ -75,10 +75,6 @@ footer p {
     margin-top: 0px;
 }
 
-.ListItem {
-    margin-top: 10px;
-}
-
 @media screen and (max-width: 700px){
 
     .grid-page{
@@ -95,15 +91,12 @@ footer p {
     aside {
         flex-direction: row;
         justify-content: center;
+        align-items: center;
     }
-    
+
     .ListItem {
         margin-bottom: unset;
         margin-right: 1rem;
-    }
-    
-    .LastItem {
         margin-top: unset;
-        margin-left: auto;
     }
 }
