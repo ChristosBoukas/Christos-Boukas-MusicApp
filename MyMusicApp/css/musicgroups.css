@@ -30,7 +30,7 @@ main {
   font-weight: bold;
   padding-top: 10px;
   padding-bottom: 10px;
-  background: radial-gradient(circle at center, red 0, rgb(107, 40, 40), rgb(0, 0, 0) 100%)
+  background: radial-gradient(circle at center, var(--color3), rgb(107, 40, 40), rgb(0, 0, 0) 100%)
 }
 
 .trFluid:nth-child(even) {
